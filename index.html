@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hibern</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">HIBERN</h1>
+            <li><a href="lista.html">Minha lista</a></li>
+            <li><a href="filmes.html">Filmes</a></li>
+            <li><a href="series.html">Séries</a></li>
+            <li><a href="blog.html">Blog</a></li>
+
+      <div class="push-right">
+        <div id="search-container">
+          <div class="input-group">
+            <div class="input-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <input 
+            id="searchInput" 
+            type="text" 
+            class="input-field" 
+            placeholder="Pesquisar">
+          </div>
+        </div>
+</div>
+        <div class="login-register">
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="register.html" class="btn-register">Registrar</a>
+
+        </nav>
+
+        <div class="configuracoes-container">
+  <button id="btn-configuracoes" class="btn-config">☰</button>
+  <div class="submenu-config hidden">
+    <button id="btn-tema" class="btn-tema">Tema Claro</button>
+    <button id="btn-logout" class="btn-logout" style="display:none;">Logout</button>
+  </div>
+</div>
+
+    </header>
+
+  <main>
+    <section class="destaque">
+      <div class="info-filme">
+        <img id="poster" src="img/supermein.jpg" alt="Superman" class="poster">
+        <div class="detalhes">
+
+
+          <h2 id="titulo">Superman</h2>
+          <p>2023 • Ação/Ficção científica • 2h 39min</p>
+          <p id="descricao">
+            Clark Kent enfrenta o maior desafio de sua vida ao tentar salvar o mundo de uma ameaça cósmica.
+          </p>
+          
+          <div class="botoes">
+            <button>Começar a assistir</button>
+            <button class="btn-adicionar-lista">Adicionar à minha lista</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bolinhas">
+        <span class="ativa" data-index="0"></span>
+        <span data-index="1"></span>
+        <span data-index="2"></span>
+      </div>
+    </section>
+  
+
+ <section class="catalogo-filmes">
+  <h1>Filmes e séries em alta</h1>
+
+
+   <button id="prevBtn" class="carousel-btn">&lt</button>
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <div class="filmes-container" id="itemsContainer">
+
+    <div class="carousel-item">
+      <div class="filme" data-id="1" data-title="Batman" data-year="2008" data-genre="Ação/Crime" data-sinopse="Batman tem conseguido manter a ordem em Gotham com a ajuda de Jim Gordon e Harvey Dent. No entanto, um jovem e anárquico criminoso, conhecido apenas como Coringa, pretende testar o Cavaleiro das Trevas e mergulhar a cidade em um verdadeiro caos.">
+        <a href=""><img src="img/batman.jpg" alt="Batman"></a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="filme" data-id="2" data-title="Dexter" data-year="2006" data-genre="Drama" data-sinopse="Dexter é um especialista forense que passa o dia solucionando crimes e a noite cometendo assassinatos. Inteligente e bonito, o assassino em série vive em conflito com seu instinto de matador e o desejo pela felicidade.">
+        <a href=""><img src="img/dexter.jpg" alt="Dexter"></a>
+     </div>
+    </div>
+
+   <div class="carousel-item">
+    <div class="filme" data-id="3" data-title="Homem de Ferro" data-year="2008" data-genre="Ação" data-sinopse="Tony Stark é um industrial bilionário e inventor brilhante que realiza testes bélicos no exterior, mas é sequestrado por terroristas que o forçam a construir uma arma devastadora. Em vez disso, ele constrói uma armadura blindada e enfrenta seus sequestradores. Quando volta aos Estados Unidos, Stark aprimora a armadura e a utiliza para combater o crime.">
+        <a href=""><img src="img/homidifero.jpg" alt="Homem de Ferro"></a>
+     </div>
+   </div>
+
+  <div class="carousel-item">
+    <div class="filme" data-id="4" data-title="Capitão América" data-year="2011" data-genre="Ação" data-sinopse="Steve Rogers é um jovem que participa de experiências visando a criação do supersoldado americano. Quando os oficiais militares conseguem transformá-lo em uma arma humana, eles percebem que não podem arriscar a vida do jovem nas batalhas de guerra.">
+        <a href=""><img src="img/capitainamega.jpg" alt="Capitão América"></a>
+    </div>
+  </div>
+
+  <div class="carousel-item">
+    <div class="filme" data-id="5" data-title="The Witcher" data-year="2019" data-genre="Drama/Aventura" data-sinopse="O mutante Geralt de Rívia é um caçador de monstros que luta para encontrar seu lugar em um mundo onde as pessoas, muitas vezes, são mais perversas do que as criaturas selvagens.">
+        <a href=""><img src="img/deuitier.jpg" alt="The Witcher"></a>
+    </div>
+  </div>
+
+  <div class="carousel-item"> 
+    <div class="filme" data-id="6" data-title="Coringa" data-year="2019" data-genre="Terror/Drama" data-sinopse="Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.">
+        <a href=""><img src="img/kuringa.jpg" alt="Coringa"></a>
+    </div>
+  </div>  
+
+  <div class="carousel-item">
+    <div class="filme" data-id="7" data-title="Shadow Huntress" data-year="2013" data-genre="Terror/Romance" data-sinopse="A vida de Clary muda completamente quando sua mãe é sequestrada e ela descobre, ao conhecer Jace, que é uma caçadora de sombras. Para salvar sua mãe, ela deve encontrar a Taça da Mortalidade, mas primeiro deve descobrir sua força interior.">
+        <a href=""><img src="img/xedourranters.jpg" alt="Shadow Huntress"></a>
+    </div>
+  </div>
+
+  <div class="carousel-item">
+    <div class="filme" data-id="8" data-title="Todo Mundo em Pânico" data-year="2000" data-genre="Comédia" data-sinopse="Depois do assassinato de uma bela colega de classe, um grupo de adolescentes desorientados descobre que há um assassino entre eles. A heroína Cindy Campbell e a sua turma de amigos tentam se proteger do perigo, mas Gail Hailstorm, uma repórter irritante, simplesmente não os deixa em paz.">
+        <a href=""><img src="img/todomunduinpanicu.jpg" alt="Todo Mundo em Pânico"></a>
+    </div>
+  </div>
+
+  <div class="carousel-item">
+    <div class="filme" 
+    data-id="9" 
+    data-title="Breaking Bad"
+    data-year="2008" 
+    data-genre="Ação/Drama" 
+    data-sinopse="Walter White é um modesto professor de química do ensino médio. Quando descobre que tem câncer terminal, ele precisa encontrar uma maneira de garantir o bem-estar da família e toma uma decisão drástica: produzir e comercializar metanfetamina.">
+        <a href=""><img src="img/breaking-bad.jpg" alt="Breaking Bad"></a>
+    </div>
+  </div>
+</div>
+
+  
+      </div>
+    </div>
+  </div>
+<button id="nextBtn" class="seta-direita">&gt</button>
+ </section>
+
+  <!-- NOVO CATÁLOGO: SÉRIES EM DESTAQUE -->
+    <section class="catalogo-filmes" id="catalogo-series-destaque">
+    <h1>Séries em Destaque</h1>
+      <div class="filmes-container" id="container-series-destaque">
+      </div>
+    </section>
+
+    <!-- NOVO CATÁLOGO: DESENHOS EM DESTAQUE -->
+<section class="catalogo-filmes" id="catalogo-desenhos-destaque">
+  <h1>Desenhos Animados</h1>
+  <div class="filmes-container" id="container-desenhos-destaque">
+  </div>
+</section>
+
+<section class="catalogo-filmes" id="catalogo-animes-destaque">
+  <h1>Animes</h1>
+  <div class="filmes-container" id="container-animes-destaque">
+  </div>
+</section>
+
+<section id="searchResults" class="search-results" style="display:none">
+  <!-- se for 1 resultado, mostramos o 'hero' customizado -->
+  <div id="singleResultHero" class="single-hero" style="display:none"></div>
+
+  <!-- se for >1 result, mostramos grade -->
+  <div id="resultsGrid" class="results-grid" style="display:none"></div>
+
+  <!-- mensagem de não encontrado -->
+  <p id="notFoundMsg" style="display:none">Desculpa, não possuímos esse título.</p>
+</section>
+
+
+ <!-- Modal de detalhe -->
+  <div id="modal-detalhe" class="modal-detalhe">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <button class="btn-assistir-modal">▶ Assistir</button>
+
+      <div class="modal-body">
+        <div class="video-trailer">
+          <iframe id="trailer-frame" src=""
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="info-detalhe">
+          <img id="modal-poster" src="" alt="Poster">
+          <h2 id="modal-titulo"></h2>
+          <p id="modal-sinopse"></p>
+          <p id="modal-genero"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</main>
+  <script src="script.js"></script>
+  <script src="register-login.js" defer></script>
+</body>
+</html>

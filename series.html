@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Séries</title>
+  <link rel="stylesheet" href="series.css">
+  <script defer src="series.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="lista.html">Minha Lista</a></li>
+        <li><a href="filmes.html">Filmes</a></li>
+        <li><a href="series.html">Séries</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <div class="configuracoes-container">
+    <!-- Botão principal -->
+    <button id="btn-configuracoes" class="btn-config">
+      ☰
+    </button>
+
+    <!-- Submenu que aparece ao clicar -->
+    <div class="submenu-config hidden">
+      <button id="btn-tema" class="btn-tema">
+        Tema claro
+      </button>
+    </div>
+  </div>
+
+  </header>
+
+  <main>
+    <section class="catalogo-serie">
+      <h1>Séries</h1>
+      <div class="series-grid" id="series-container">
+        <!-- Séries serão carregadas dinamicamente -->
+      </div>
+    </section>
+
+    <!-- Modal de Detalhe -->
+    <div id="modal-detalhe" class="modal-detalhe">
+      <div class="modal-content">
+        <span class="fechar">&times;</span>
+        <div class="modal-inner">
+          <div class="video-trailer">
+            <video id="trailer-frame" controls>
+              <source src="" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+          </div>
+          <div class="info-detalhe">
+            <h2 id="modal-titulo"></h2>
+            <img id="modal-poster" src="" alt="">
+            <p id="modal-sinopse"></p>
+            <p id="modal-genero"></p>
+            <button class="btn-fechar-modal">Fechar</button>
+            <button class="btn-assistir-modal">Assistir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

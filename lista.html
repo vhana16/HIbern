@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Lista</title>
+  <link rel="stylesheet" href="lista.css">
+  <script defer src="lista.js"></script>
+</head>
+<body>
+
+  <!-- === HEADER === -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="lista.html">Minha Lista</a></li>
+        <li><a href="filmes.html">Filmes</a></li>
+        <li><a href="series.html">Séries</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botão de configurações / tema -->
+    <div class="configuracoes-container">
+      <button id="btn-configuracoes" class="btn-config">☰</button>
+      <div class="submenu-config hidden">
+        <button id="btn-tema" class="btn-tema">Tema claro</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- === MAIN === -->
+  <main>
+    <section class="catalogo-filmes">
+      <h1>Minha Lista</h1>
+      <div id="minha-lista">
+        <!-- Filmes da lista serão carregados dinamicamente aqui -->
+      </div>
+    </section>
+
+    <!-- Modal de detalhe -->
+  <div id="modal-detalhe" class="modal-detalhe">
+    <div class="modal-content">
+      <span class="btn-fechar-modal">&times;</span>
+      <button class="btn-assistir-modal">▶ Assistir</button>
+
+      <div class="modal-body">
+        <div class="video-trailer">
+          <iframe id="trailer-frame" src=""
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="info-detalhe">
+          <img id="modal-poster" src="" alt="Poster">
+          <h2 id="modal-titulo"></h2>
+          <p id="modal-sinopse"></p>
+          <p id="modal-genero"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+</body>
+</html>

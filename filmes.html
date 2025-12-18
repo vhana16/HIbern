@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Filmes</title>
+  <link rel="stylesheet" href="filmes.css">
+  <script defer src="filmes.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="lista.html">Minha Lista</a></li>
+        <li><a href="filmes.html">Filmes</a></li>
+        <li><a href="series.html">Séries</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <!-- Configurações -->
+    <div class="configuracoes-container">
+      <button id="btn-configuracoes" class="btn-config">☰</button>
+
+      <div class="submenu-config hidden">
+        <button id="btn-tema" class="btn-tema">Tema claro</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalogo-filmes">
+      <h1>Filmes</h1>
+      <div class="filmes-grid" id="filmes-container">
+        <!-- Filmes aparecem via filmes.js -->
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-detalhe" class="modal-detalhe hidden">
+      <div class="modal-overlay"></div>
+
+      <div class="modal-content">
+        <span class="btn-fechar-modal">&times;</span>
+
+        <div class="modal-body">
+          <div class="video-trailer">
+            <video id="trailer-frame" controls>
+              <source id="trailer-source" src="" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="info-detalhe">
+            <img id="modal-poster" src="" alt="Poster do filme">
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-sinopse"></p>
+            <p id="modal-genero"></p>
+            <button class="btn-assistir-modal">Assistir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

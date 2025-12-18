@@ -1,0 +1,724 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* === HEADER === */
+header {
+  background: #26658C;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.logo-link img {
+  height: 50px; /* tamanho da logo */
+  cursor: pointer;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* === Configurações e submenu === */
+.configuracoes-container {
+  position: relative;
+}
+
+.btn-config {
+  background: #26658C;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-config:hover {
+  background: #222;
+}
+
+.submenu-config {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 5px;
+  z-index: 100;
+}
+
+.submenu-config.hidden {
+  display: none;
+}
+
+.submenu-config button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  text-align: left;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submenu-config button:hover {
+  background: #222;
+}
+
+
+/* Caso os itens do submenu sejam botões ou links */
+.submenu-config button,
+.submenu-config a {
+  color: #fff;             /* texto branco */
+  background: transparent; /* fundo transparente ou use #000 se quiser consistente */
+  border: none;            /* opcional: tira bordas */
+  margin: 5px 0;           /* espaçamento entre itens */
+  cursor: pointer;
+}
+
+.submenu-config button:hover,
+.submenu-config a:hover {
+  background: #222;        /* destaque ao passar o mouse */
+}
+
+.submenu-config.show {
+  display: flex;
+}
+
+.btn-tema {
+  background-color: #C7C9CC;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* === SEÇÃO DE DESTAQUE === */
+.destaque {
+  background: #02101e;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.info-filme {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.poster {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.detalhes h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.detalhes p {
+  color: #9bc9ff;
+  margin-bottom: 10px;
+}
+
+.botoes button {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.botoes button:hover {
+  background: #005fd1;
+}
+
+/* === BOLINHAS DE NAVEGAÇÃO === */
+.bolinhas {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.bolinhas span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bolinhas .ativa {
+  background: #fff;
+}
+
+/* === CATÁLOGO === */
+.catalogo-filmes {
+  position: relative;
+  padding: 20px;
+}
+
+.catalogo-filmes h1 {
+  margin-bottom: 15px;
+}
+
+.filmes-container {
+ display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.filme img {
+  width: 160px;
+  height: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.filme img:hover {
+  transform: scale(1.08);
+}
+
+/* === SETA DIREITA === */
+.seta-direita {
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.seta-direita:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-wrapper{
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track{
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    margin: 0 15px;
+    color: white;
+    display: flex;
+    gap: 15px;
+}
+
+.carousel-btn{
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+#prevBtn {
+  left: 0;
+  z-index: 100;
+}
+
+#nextBtn {
+  right: 0;
+}
+
+.input-group{
+  display: flex;
+  align-items:center;
+  background-color: #ffffff;
+  padding: 8px 16px 8px 8px;
+  border-radius: 24px;
+  gap: 8px;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  background-color: #6046ff;
+  color: #ffffff;
+  border-radius: 100%;
+}
+
+.input-field {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#searchInput {
+  width: 200px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* container de resultados */
+.search-results {
+  padding: 40px;
+  color: white;
+}
+
+/* estilo dos cards */
+.filme-card {
+  width: 150px;
+  transition: transform 0.2s;
+}
+
+.filme-card:hover {
+  transform: scale(1.05);
+}
+
+/* hero do resultado único */
+.single-hero-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: linear-gradient(#2228C9, #131A59);
+  padding: 50px;
+  border-radius: 20px;
+  
+}
+
+.single-hero-card p{
+  font-size: 16px;
+}
+
+.single-hero-card h2{
+  font-size: 40px;
+}
+
+.single-hero-card button{
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+
+.single-hero img {
+  width: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+
+
+
+/* ======= BOTÕES (IGUAIS AOS DA HOME) ======= */
+.btn {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.btn button:hover {
+  background: #005fd1;
+}
+
+/* ======= GRID DE VÁRIOS RESULTADOS ======= */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 22px;
+  padding: 20px;
+}
+
+.result-card {
+  background: #111;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.result-card:hover {
+  transform: translateY(-6px);
+}
+
+.result-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.result-card h3 {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.1;
+  height: 2.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-card p {
+  font-size: 0.95rem;
+  padding: 0 15px;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+.result-card button {
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 6px 8px;
+}
+
+/* ======= TEXTO DE ERRO ======= */
+.no-results {
+  color: #ccc;
+  font-size: 1.4rem;
+  margin-top: 60px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+/* === BOTÕES DE OPÇÃO === */
+.filme-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.opcoes-filme {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  gap: 8px;
+}
+
+.filme-wrapper:hover .opcoes-filme {
+  display: flex;
+}
+
+.opcoes-filme button {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+}
+
+.opcoes-filme button:hover {
+  background: #007bff;
+}
+
+/*==================Modal===================*/
+.modal-detalhe {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: 5% auto;
+  width: 80%;
+  max-width: 900px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video-trailer {
+  flex: 1 1 60%;
+  min-height: 300px;
+}
+
+.video-trailer iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.info-detalhe {
+  flex: 1 1 40%;
+  padding: 20px;
+}
+
+.info-detalhe img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.info-detalhe h2 {
+  margin-top: 0;
+}
+
+.info-detalhe p {
+  color: #9bc9ff;
+  margin-bottom: 10px;
+}
+
+#modal-genero {
+  color: #9bc9ff;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.fechar, .btn-fechar-modal, .btn-assistir-modal {
+  color: #aaa;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.btn-fechar-modal {
+  display: block;
+  color: #fff;
+  background: #333;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-fechar-modal:hover {
+  background: #555;
+}
+
+.btn-assistir-modal {
+  display: block;
+  color: #fff;
+  background: #007bff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  margin: 10px;
+  transition: background 0.3s;
+}
+
+.btn-assistir-modal:hover {
+  background: #005fd1;
+}
+
+/* === TEMA CLARO === */
+body.tema-claro {
+  background-color: #f5f5f5;
+  color: #1A1A1A;
+}
+
+/* Header azul claro no tema claro */
+body.tema-claro header {
+  background-color: #5AA0C7; /* nova cor do header */
+  color: #fff; /* texto branco para contraste */
+}
+
+/* Nav */
+body.tema-claro nav a {
+  color: #fff; /* ajusta contraste no header azul */
+}
+
+body.tema-claro nav a:hover {
+  color: #e0e0e0;
+}
+
+/* Botão de configuração */
+body.tema-claro .btn-config {
+  background-color: #5AA0C7;
+  color: #333;
+}
+
+body.tema-claro .submenu-config {
+  background-color: #fff;
+  color: #1A1A1A;
+}
+
+body.tema-claro .submenu-config button,
+body.tema-claro .submenu-config a {
+  color: #1A1A1A;
+}
+
+body.tema-claro .submenu-config button:hover,
+body.tema-claro .submenu-config a:hover {
+  background-color: #ddd;
+}
+
+/* Seção de destaque */
+body.tema-claro .destaque {
+  background-color: #8CC8F5;
+  color: #1A1A1A;
+}
+
+body.tema-claro .destaque .detalhes p {
+  color: #1A1A1A;
+}
+
+body.tema-claro .destaque .botoes button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+body.tema-claro .destaque .botoes button:hover {
+  background-color: #005fd1;
+}
+
+/* === NOVO: fundo dos catálogos e cards no tema claro === */
+body.tema-claro .catalogo-filmes,
+body.tema-claro .filme-card,
+body.tema-claro .result-card {
+  background-color: #D8F0FF; /* azul clarinho para os cards */
+  color: #1A1A1A; /* texto escuro */
+}
+
+/* Botões dentro dos cards no tema claro */
+body.tema-claro .btn,
+body.tema-claro .btn-info,
+body.tema-claro .btn-add {
+  background-color: #6CB4E0; /* azul do header */
+  color: #fff;
+  border: none;
+}
+
+body.tema-claro .btn:hover,
+body.tema-claro .btn-info:hover,
+body.tema-claro .btn-add:hover {
+  background-color: #5AA0C7;
+}
+
+/* Estilos específicos para o botão "➕ Minha lista" */
+.btn-add-result {
+  background-color: #f8f8f8; 
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+/* Efeito hover para o botão "➕ Minha lista" */
+.btn-add-result:hover {
+  background-color: #218838; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Estilos específicos para o botão "Ver mais" */
+.btn-info-result {
+  background-color: #007bff; 
+  color: white; 
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Efeito hover para o botão "Ver mais" */
+.btn-info-result:hover {
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+.push-right {
+  margin-left: 440px;     /* empurra tudo para a direita */
+  display: flex;         /* deixa os ícones lado a lado */
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+
+
+
+

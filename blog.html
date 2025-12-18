@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIBERN — Blog</title>
+  <link rel="stylesheet" href="blog.css" />
+  <script defer src="blog.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">HIBERN</div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="filmes.html">Filmes</a>
+      <a href="series.html">Séries</a>
+      <a href="">Blog</a>
+    </nav>
+
+    <!-- CONFIGURAÇÃO -->
+    <div class="configuracoes-container">
+  <button id="btn-configuracoes" class="btn-config">☰</button>
+  <div class="submenu-config hidden">
+    <button id="btn-tema" class="btn-tema">Tema Claro</button>
+    <button id="btn-logout" class="btn-logout" style="display:none;">Logout</button>
+  </div>
+  </header>
+
+  <!-- LAYOUT PRINCIPAL -->
+  <div class="blog-area">
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar">
+      <h3 class="side-title">Perfis</h3>
+      <div class="profile-list" id="profileList"></div>
+    </aside>
+
+    <!-- POSTS -->
+    <section class="blog-posts" id="postList"></section>
+
+  </div>
+
+</body>
+</html>
